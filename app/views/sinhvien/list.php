@@ -7,7 +7,7 @@
 <?php foreach ($sinhViens as $sv): ?>
     <li class="list-group-item">
         <h4>
-            <a href="/ktgk/SinhVien/show/<?php echo htmlspecialchars($sv->MaSV, ENT_QUOTES, 'UTF-8'); ?>">
+            <a href="/ktgk/public/index.php?controller=SinhVien&action=show&id=<?php echo urlencode($sv->MaSV); ?>">
                 <?php echo htmlspecialchars($sv->HoTen, ENT_QUOTES, 'UTF-8'); ?>
             </a>
         </h4>
@@ -18,11 +18,12 @@
             <p><img src="/ktgk/uploads/<?php echo htmlspecialchars($sv->Hinh, ENT_QUOTES, 'UTF-8'); ?>" 
                     alt="Hình sinh viên" width="100"></p>
         <?php endif; ?>
-        <a href="/ktgk/SinhVien/edit/<?php echo htmlspecialchars($sv->MaSV, ENT_QUOTES, 'UTF-8'); ?>" 
-           class="btn btn-warning">Sửa</a>
-        <a href="/ktgk/SinhVien/delete/<?php echo htmlspecialchars($sv->MaSV, ENT_QUOTES, 'UTF-8'); ?>" 
-           class="btn btn-danger" 
-           onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này?');">Xóa</a>
+        <a href="/ktgk/public/index.php?controller=SinhVien&action=edit&id=<?php echo urlencode($sv->MaSV); ?>" class="btn btn-warning">Sửa</a>
+
+        <a href="/ktgk/public/index.php?controller=SinhVien&action=delete&id=<?php echo urlencode($sv->MaSV); ?>" 
+   class="btn btn-danger" 
+   onclick="return confirm('Bạn có chắc chắn muốn xóa sinh viên này?');">Xóa</a>
+
     </li>
 <?php endforeach; ?>
 </ul>
