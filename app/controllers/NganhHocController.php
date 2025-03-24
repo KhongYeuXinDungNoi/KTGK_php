@@ -3,7 +3,7 @@
     require_once(BASE_PATH . '/app/config/database.php');
     require_once(BASE_PATH . '/app/models/NganhHocModel.php');
 
-    class CategoryController
+    class NganhHocController
     {
         private $nganhhocModel;
         private $db;
